@@ -22,7 +22,6 @@
     "lint": "echo 'NOOP'"
   },
   "dependencies": {
-    "copy-text-to-clipboard": "^3.0.1",
     "remark-shiki-twoslash": "3.0.6",
     "typescript": ">3"
   },

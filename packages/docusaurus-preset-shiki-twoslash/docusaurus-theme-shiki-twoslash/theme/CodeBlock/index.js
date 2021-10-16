@@ -3,9 +3,9 @@
 
 import "./styles.css"
 
-import copy from "copy-text-to-clipboard"
 import React, { useRef, useState } from "react"
 import Translate, { translate } from "@docusaurus/Translate"
+import {copyTextToClipboard} from './copy-text'
 
 const CodeBlock = ({ children, ...props }) => {
   const pre = useRef(null)
@@ -13,7 +13,7 @@ const CodeBlock = ({ children, ...props }) => {
 
   const handleCopyCode = () => {
     if (pre.current) {
-      copy(Array.from(pre.current.querySelectorAll("code div.line")).map(el => el.textContent).join("\n"))
+      copyTextToClipboard(Array.from(pre.current.querySelectorAll("code div.line")).map(el => el.textContent).join("\n"))
     }
     setShowCopied(true)
     setTimeout(() => setShowCopied(false), 2000)
